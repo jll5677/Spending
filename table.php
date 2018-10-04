@@ -3,43 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<title> Daily Spending </title>
+	<title> Daily Spending Table </title>
 	<?php
 		include 'crud.php'
 	?>
 </head>
 <body>
-	<div>
-		<form action="crud.php" method="POST">
-			<div class="form group">
-				<label for="purchaseDate"> Date of purchase </label>
-				<input type="date" class="form-control" name="purchaseDate" id="today">
-			</div>
-			<div class="form group">
-				<label for="purchaseAmount"> Total amount of purchase </label>
-				<input type="number" min="0" step="any" class="form-control" name="purchaseAmount" >
-			</div>
-			<div class="form group">
-				<label for="storeName"> Name of store </label>
-				<input type="text" class="form-control" name="storeName">
-			</div>
-			<div class="form group">
-				<label for="itemName"> Name of item </label>
-				<input type="text" class="form-control" name="itemName">
-			</div>
-			<div class="form group">
-				<label for="itemCatergory"> Category of item </label>
-				<Select class="form-control" name="itemCatergory">
-					<option disabled selected value> -- Select an option -- </option>
-					<option value="Food"> Food </option>
-					<option value="Lifestyle"> Lifestyle </option>
-					<option value="Family"> Family </option>
-					<option value="Transportation"> Transportation </option>
-				</Select>
-			</div>
-			<button class="btn btn-primary" type="submit" name="submit"> Submit </button>
-		</form>
-
+	<div class="container">
 		<h1> Daily Spending </h1>
 		<table class="table table-striped">
 			<thread>
@@ -52,7 +22,7 @@
 				</tr>
 			</thread>
 			<?php
-				$query = "SELECT * FROM Daily_Spending ORDER BY purchaseDate DESC LIMIT 5";
+				$query = "SELECT * FROM Daily_Spending ORDER BY purchaseDate DESC";
 				$result_set = mysqli_query($connection, $query);
 
 				if (!$result_set) {
