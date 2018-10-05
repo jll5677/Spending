@@ -18,7 +18,7 @@
 			$result_add = mysqli_query($connection, $query_add);
 
 			if($result_add){
-				echo "success";
+				header('location: index.php');
 			} else {
 				die("Database insert failed to table because..." . mysqli_error($connecion));
 			}

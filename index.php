@@ -17,19 +17,19 @@
 			</div>
 			<div class="form group">
 				<label for="purchaseAmount"> Total amount of purchase </label>
-				<input type="number" min="0" step="any" class="form-control" name="purchaseAmount" >
+				<input type="number" min="0" step="any" class="form-control" name="purchaseAmount" required>
 			</div>
 			<div class="form group">
 				<label for="storeName"> Name of store </label>
-				<input type="text" class="form-control" name="storeName">
+				<input type="text" class="form-control" name="storeName" required>
 			</div>
 			<div class="form group">
 				<label for="itemName"> Name of item </label>
-				<input type="text" class="form-control" name="itemName">
+				<input type="text" class="form-control" name="itemName" required>
 			</div>
 			<div class="form group">
-				<label for="itemCatergory"> Category of item </label>
-				<Select class="form-control" name="itemCatergory">
+				<label for="itemCategory"> Category of item </label>
+				<Select class="form-control" name="itemCategory" required>
 					<option disabled selected value> -- Select an option -- </option>
 					<option value="Food"> Food </option>
 					<option value="Lifestyle"> Lifestyle </option>
